@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="s1h-ll-3r3">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Movie Guide-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MovieGuide" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MovieGuide" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -22,21 +22,21 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="196" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ROc-eY-dFx">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="149" id="d8u-NI-b3S">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="149"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="MovieCell" rowHeight="149" id="d8u-NI-b3S" customClass="MovieCell" customModule="MovieGuide" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="375" height="149"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="d8u-NI-b3S" id="Lod-EG-tj1">
-                                            <frame key="frameInset" width="375" height="148"/>
+                                            <frame key="frameInset" width="342" height="148"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="movieposter" translatesAutoresizingMaskIntoConstraints="NO" id="Fgb-Ut-Boy">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Les-miserables-movie-poster" translatesAutoresizingMaskIntoConstraints="NO" id="Fgb-Ut-Boy">
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="130" id="TPw-68-fco"/>
                                                         <constraint firstAttribute="width" constant="90" id="tKi-qe-YZs"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Charile Chaplin" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PSp-ri-WLm">
-                                                    <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="20"/>
+                                                    <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -49,6 +49,11 @@
                                                 <constraint firstItem="Fgb-Ut-Boy" firstAttribute="centerY" secondItem="Lod-EG-tj1" secondAttribute="centerY" id="w1T-7s-CYr"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="posterImageView" destination="Fgb-Ut-Boy" id="9oR-X0-33C"/>
+                                            <outlet property="titleLabel" destination="PSp-ri-WLm" id="BiU-9c-7ff"/>
+                                            <segue destination="W11-Jz-YJx" kind="push" id="Idx-w8-Uo1"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -61,17 +66,92 @@
                             <constraint firstAttribute="trailing" secondItem="ROc-eY-dFx" secondAttribute="trailing" id="xJO-IC-jM3"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Movie Guide" id="T54-8U-mhE"/>
                     <connections>
                         <outlet property="tableView" destination="ROc-eY-dFx" id="v67-RO-MrB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="670.5" y="154.5"/>
+        </scene>
+        <!--Movie Detail-->
+        <scene sceneID="tqO-7T-Tva">
+            <objects>
+                <viewController id="W11-Jz-YJx" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="abu-SN-Rvr"/>
+                        <viewControllerLayoutGuide type="bottom" id="6LI-74-Nwi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gA6-RR-Ndp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Les-miserable-big" translatesAutoresizingMaskIntoConstraints="NO" id="SBl-d5-ahz">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="2in-5O-biz"/>
+                                    <constraint firstAttribute="height" constant="215" id="U9x-dN-pG8"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" text="Les Miserable" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z78-d5-U25">
+                                <fontDescription key="fontDescription" name="MyanmarSangamMN" family="Myanmar Sangam MN" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="One of my favorite movie!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="baP-fz-5hf">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="baP-fz-5hf" firstAttribute="leading" secondItem="gA6-RR-Ndp" secondAttribute="leadingMargin" constant="8" id="5nW-eg-qHb"/>
+                            <constraint firstItem="baP-fz-5hf" firstAttribute="centerX" secondItem="gA6-RR-Ndp" secondAttribute="centerX" id="AdK-35-rLf"/>
+                            <constraint firstItem="SBl-d5-ahz" firstAttribute="top" secondItem="abu-SN-Rvr" secondAttribute="bottom" id="BWT-wo-Oq6"/>
+                            <constraint firstItem="z78-d5-U25" firstAttribute="centerX" secondItem="gA6-RR-Ndp" secondAttribute="centerX" id="HQ2-9s-XFq"/>
+                            <constraint firstItem="z78-d5-U25" firstAttribute="top" secondItem="SBl-d5-ahz" secondAttribute="bottom" constant="20" id="MDN-bt-Ie6"/>
+                            <constraint firstItem="6LI-74-Nwi" firstAttribute="top" secondItem="baP-fz-5hf" secondAttribute="bottom" constant="8" id="MxT-P7-opE"/>
+                            <constraint firstItem="baP-fz-5hf" firstAttribute="centerX" secondItem="gA6-RR-Ndp" secondAttribute="centerX" id="NKQ-2I-gtA"/>
+                            <constraint firstItem="SBl-d5-ahz" firstAttribute="leading" secondItem="gA6-RR-Ndp" secondAttribute="leading" id="Q7K-0f-I2w"/>
+                            <constraint firstItem="SBl-d5-ahz" firstAttribute="centerX" secondItem="gA6-RR-Ndp" secondAttribute="centerX" id="XaO-BN-y8n"/>
+                            <constraint firstAttribute="trailing" secondItem="SBl-d5-ahz" secondAttribute="trailing" id="a0m-Fa-0fm"/>
+                            <constraint firstItem="baP-fz-5hf" firstAttribute="top" secondItem="z78-d5-U25" secondAttribute="bottom" constant="8" id="c1w-lN-jgb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="baP-fz-5hf" secondAttribute="trailing" constant="8" id="cC5-wP-qsd"/>
+                            <constraint firstItem="6LI-74-Nwi" firstAttribute="top" secondItem="baP-fz-5hf" secondAttribute="bottom" constant="8" id="dWI-fK-LOM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="baP-fz-5hf" secondAttribute="trailing" constant="8" id="eAL-06-c26"/>
+                            <constraint firstItem="baP-fz-5hf" firstAttribute="leading" secondItem="gA6-RR-Ndp" secondAttribute="leadingMargin" constant="8" id="h2n-7k-iwA"/>
+                            <constraint firstItem="baP-fz-5hf" firstAttribute="top" secondItem="z78-d5-U25" secondAttribute="bottom" constant="8" id="qBi-2l-7aO"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Movie Detail" id="6au-Ai-dvg"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eF8-ha-jWy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1115.5" y="154.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="OZf-W5-eBU">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="s1h-ll-3r3" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="g34-hY-vp6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="n6V-bL-Xgl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KO8-sW-ClC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
             <point key="canvasLocation" x="83.5" y="154.5"/>
         </scene>
     </scenes>
     <resources>
-        <image name="movieposter" width="90" height="130"/>
+        <image name="Les-miserable-big" width="1600" height="1200"/>
+        <image name="Les-miserables-movie-poster" width="220" height="326"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
