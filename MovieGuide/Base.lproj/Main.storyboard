@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MovieGuide" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="196" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ROc-eY-dFx">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="149" id="d8u-NI-b3S">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="149"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="d8u-NI-b3S" id="Lod-EG-tj1">
+                                            <frame key="frameInset" width="375" height="148"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="movieposter" translatesAutoresizingMaskIntoConstraints="NO" id="Fgb-Ut-Boy">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="130" id="TPw-68-fco"/>
+                                                        <constraint firstAttribute="width" constant="90" id="tKi-qe-YZs"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Charile Chaplin" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PSp-ri-WLm">
+                                                    <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Fgb-Ut-Boy" firstAttribute="leading" secondItem="Lod-EG-tj1" secondAttribute="leadingMargin" constant="20" id="348-Zj-WMp"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="PSp-ri-WLm" secondAttribute="trailing" constant="8" id="dha-LC-HL5"/>
+                                                <constraint firstItem="PSp-ri-WLm" firstAttribute="leading" secondItem="Fgb-Ut-Boy" secondAttribute="trailing" constant="8" id="hNO-Wf-FwS"/>
+                                                <constraint firstItem="PSp-ri-WLm" firstAttribute="centerY" secondItem="Lod-EG-tj1" secondAttribute="centerY" id="j3Z-TE-hjb"/>
+                                                <constraint firstItem="Fgb-Ut-Boy" firstAttribute="centerY" secondItem="Lod-EG-tj1" secondAttribute="centerY" id="w1T-7s-CYr"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ROc-eY-dFx" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="SKD-OH-tbw"/>
+                            <constraint firstItem="ROc-eY-dFx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="lw7-3w-k7N"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ROc-eY-dFx" secondAttribute="bottom" id="nHp-p0-ZNf"/>
+                            <constraint firstAttribute="trailing" secondItem="ROc-eY-dFx" secondAttribute="trailing" id="xJO-IC-jM3"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="ROc-eY-dFx" id="v67-RO-MrB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="83.5" y="154.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="movieposter" width="90" height="130"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
+    </simulatedMetricsContainer>
+</document>
