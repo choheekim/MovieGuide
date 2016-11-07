@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="s1h-ll-3r3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="s1h-ll-3r3">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,22 +23,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="196" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ROc-eY-dFx">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="MovieCell" rowHeight="149" id="d8u-NI-b3S" customClass="MovieCell" customModule="MovieGuide" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="375" height="149"/>
+                                        <rect key="frame" x="0.0" y="28" width="1000" height="149"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="d8u-NI-b3S" id="Lod-EG-tj1">
-                                            <frame key="frameInset" width="342" height="148"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="818" height="149"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Les-miserables-movie-poster" translatesAutoresizingMaskIntoConstraints="NO" id="Fgb-Ut-Boy">
+                                                    <rect key="frame" x="28" y="9.5" width="90" height="130"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="130" id="TPw-68-fco"/>
                                                         <constraint firstAttribute="width" constant="90" id="tKi-qe-YZs"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Charile Chaplin" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PSp-ri-WLm">
+                                                    <rect key="frame" x="126" y="62.5" width="200" height="23.5"/>
                                                     <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -78,7 +84,7 @@
         <!--Movie Detail-->
         <scene sceneID="tqO-7T-Tva">
             <objects>
-                <viewController id="W11-Jz-YJx" sceneMemberID="viewController">
+                <viewController id="W11-Jz-YJx" customClass="MovieDetailController" customModule="MovieGuide" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="abu-SN-Rvr"/>
                         <viewControllerLayoutGuide type="bottom" id="6LI-74-Nwi"/>
@@ -88,17 +94,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Les-miserable-big" translatesAutoresizingMaskIntoConstraints="NO" id="SBl-d5-ahz">
+                                <rect key="frame" x="0.0" y="64" width="375" height="215"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="375" id="2in-5O-biz"/>
                                     <constraint firstAttribute="height" constant="215" id="U9x-dN-pG8"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" text="Les Miserable" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z78-d5-U25">
+                                <rect key="frame" x="121" y="299" width="133" height="30"/>
                                 <fontDescription key="fontDescription" name="MyanmarSangamMN" family="Myanmar Sangam MN" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Overview" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="baP-fz-5hf">
+                                <rect key="frame" x="24" y="337" width="327" height="322"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -125,6 +134,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Movie Detail" id="6au-Ai-dvg"/>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="SBl-d5-ahz" id="5ap-oK-1DL"/>
+                        <outlet property="overviewLabel" destination="baP-fz-5hf" id="R4H-Xl-Mak"/>
+                        <outlet property="titleLabel" destination="z78-d5-U25" id="aov-hW-g7M"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eF8-ha-jWy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

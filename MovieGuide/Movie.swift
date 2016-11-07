@@ -31,7 +31,7 @@ class Movie: NSObject {
             movieBackdropPathUrl = nil
         }
         
-        self.movieTitle = dictionary["movie_title"] as? String
+        self.movieTitle = dictionary["title"] as? String
         self.movieOverview = dictionary["overview"] as? String
     }
     
